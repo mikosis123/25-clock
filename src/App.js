@@ -9,7 +9,6 @@ const min = 60;
 const max = 60 * 60;
 const interval = 60;
 
-
 function App() {
   const [breakTime, setBreakTime] = useState(defaultBreakTime);
   const [sessionTime, setSessionTime] = useState(defaultSessionTime);
@@ -20,7 +19,7 @@ function App() {
   });
 
   useEffect(() => {
-    let timerID=""
+    let timerID = "";
     if (!displayState.timerRunning) return;
 
     if (displayState.timerRunning) {
@@ -50,7 +49,6 @@ function App() {
       timeType: "Session",
       timerRunning: false,
     });
-   
   };
 
   const startStop = () => {
@@ -60,10 +58,10 @@ function App() {
     }));
   };
 
-  // const changeBreakTime = (time) => {
-  //   if (displayState.timerRunning) return;
-  //   setBreakTime(time);
-  // };
+  const changeBreakTime = (time) => {
+    if (displayState.timerRunning) return;
+    setBreakTime(time);
+  };
 
   const decrementDisplay = () => {
     setDisplayState((prev) => ({
@@ -87,7 +85,14 @@ function App() {
       <div className="setters">
         <div className="break">
           <h4 id="break-label">Break Length</h4>
-          
+          <TimeSetter
+            time={breakTime}
+            setTime={changeBreakTime}
+            min={min}
+            max={max}
+            interval={interval}
+            type="break"
+          />
         </div>
         <div className="session">
           <h4 id="session-label">Session Length</h4>
@@ -106,8 +111,6 @@ function App() {
         reset={reset}
         startStop={startStop}
       />
-
-     
     </div>
   );
 }

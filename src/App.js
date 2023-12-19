@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import alarmAudio from "./Audio/alarmAudio.mp3";
 import "./App.css";
-import Display from "./Display";
 import TimeSetter from "./TimeSetter";
+import Display from "./Display";
 
 const defaultBreakTime = 5 * 60;
 const defaultSessionTime = 25 * 60;
@@ -17,7 +18,6 @@ function App() {
     timeType: "Session",
     timerRunning: false,
   });
-
   useEffect(() => {
     let timerID = "";
     if (!displayState.timerRunning) return;
@@ -33,6 +33,9 @@ function App() {
 
   useEffect(() => {
     if (displayState.time === 0) {
+      const audio = document.getElementById("beep");
+      audio.currentTime = 2;
+      audio.play().catch((err) => console.log(err));
       setDisplayState((prev) => ({
         ...prev,
         timeType: prev.timeType === "Session" ? "Break" : "Session",
@@ -49,6 +52,9 @@ function App() {
       timeType: "Session",
       timerRunning: false,
     });
+    const audio = document.getElementById("beep");
+    audio.pause();
+    audio.currentTime = 0;
   };
 
   const startStop = () => {
@@ -111,6 +117,7 @@ function App() {
         reset={reset}
         startStop={startStop}
       />
+      <audio id="beep" src={alarmAudio}></audio>
     </div>
   );
 }

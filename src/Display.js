@@ -1,5 +1,5 @@
 import { FaPlay, FaPause, FaUndo } from "react-icons/fa";
-
+import "./App.css";
 const Display = ({ displayState, reset, startStop }) => {
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
@@ -13,7 +13,7 @@ const Display = ({ displayState, reset, startStop }) => {
       <h4 id="timer-label">{displayState.timeType}</h4>
       <span
         id="time-left"
-        style={{ color: displayState.timerRunning ? "red" : "black" }}
+        style={{ color: displayState.timerRunning ? "red" : "blue" }}
       >
         {formatTime(displayState.time)}
       </span>

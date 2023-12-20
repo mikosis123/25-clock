@@ -1,17 +1,17 @@
 .clock {
-  max-width: 700px;
-  margin: 0 auto;
   height: 100vh;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: aquamarine;
 }
 
 .setters {
   display: flex;
   text-align: center;
-  width: 100%;
+  width: 700px;
   justify-content: space-around;
 }
 
@@ -20,11 +20,13 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #2222aa;
+  background-color: rgb(67, 59, 19);
   color: white;
   cursor: pointer;
 }
-
+.adjustable.button {
+  height: 200px;
+}
 h4 {
   font-size: 30px;
   margin-top: 20px;
@@ -37,4 +39,18 @@ span {
 .display {
   text-align: center;
   margin-top: 20px;
+}
+#time-left {
+  font-size: 200px;
+  font-weight: bolder;
+}
+.timer {
+  font-size: 100px;
+  font-weight: 500;
+  color: rgb(45, 33, 18);
+}
+.display {
+  border: 6px solid blue;
+  padding: 0 100px;
+  border-radius: 80%;
 }

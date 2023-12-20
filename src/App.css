@@ -11,25 +11,27 @@
 .setters {
   display: flex;
   text-align: center;
-  width: 700px;
+  width: 900px;
   justify-content: space-around;
 }
 
 button {
   margin: 20px;
-  padding: 10px 20px;
+  padding: 20px 40px;
   border: none;
-  border-radius: 5px;
-  background-color: rgb(67, 59, 19);
+  border-radius: 3px;
+  background-color: rgb(71, 59, 2);
   color: white;
   cursor: pointer;
 }
-.adjustable.button {
-  height: 200px;
+button:active {
+  background-color: #102936;
 }
+
 h4 {
-  font-size: 30px;
-  margin-top: 20px;
+  font-size: 50px;
+  margin-top: 30px;
+  color: #25380a;
 }
 
 span {
@@ -47,10 +49,10 @@ span {
 .timer {
   font-size: 100px;
   font-weight: 500;
-  color: rgb(45, 33, 18);
+  color: rgb(30, 30, 98);
 }
 .display {
-  border: 6px solid blue;
+  border: 6px solid rgb(30, 30, 98);
   padding: 0 100px;
   border-radius: 80%;
 }

@@ -13,7 +13,9 @@ const Display = ({ displayState, reset, startStop }) => {
       <h4 id="timer-label">{displayState.timeType}</h4>
       <span
         id="time-left"
-        style={{ color: displayState.timerRunning ? "red" : "blue" }}
+        style={{
+          color: displayState.timerRunning ? "#4f152f" : "rgb(30, 30, 98)",
+        }}
       >
         {formatTime(displayState.time)}
       </span>
